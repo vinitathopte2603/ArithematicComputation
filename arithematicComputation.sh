@@ -11,3 +11,6 @@ echo "$a $b $c"
 
 firstOperation=$(( $a+$(($b*$c)) ))
 echo "$firstOperation"
+
+secondOperation=$(( $(($a*$b))+$c ))
+echo "$secondOperation"
