@@ -51,3 +51,21 @@ do
 	done
 done
 echo ${resultArray[@]}
+
+
+#Result in Ascending order
+
+for (( i=0 ;i<noOfOperations; i++ ))
+do
+	for (( j=$(($i+1)); j<$noOfOperations;j++ ))
+	do
+		if [ ${resultArray[$i]} -gt ${resultArray[$j]} ]
+		then
+			temp=${resultArray[$i]}
+			resultArray[$i]=${resultArray[$j]}
+			resultArray[$j]=$temp
+		fi
+	done
+done
+
+echo ${resultArray[@]}
