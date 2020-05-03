@@ -17,3 +17,6 @@ echo "$secondOperation"
 
 thirdOperation=$(( $c+$(($a/$b)) ))
 echo "$thirdOperation"
+
+fourthOperation=$(( $(($a%$b))+$c ))
+echo "$fourthOperation"
