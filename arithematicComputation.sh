@@ -8,3 +8,6 @@ read -p "Enter b value : " b
 read -p "Enter c value : " c
 
 echo "$a $b $c"
+
+firstOperation=$(( $a+$(($b*$c)) ))
+echo "$firstOperation"
