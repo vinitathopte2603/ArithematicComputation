@@ -8,22 +8,30 @@ read -p "Enter b value : " b
 read -p "Enter c value : " c
 
 echo "$a $b $c"
-declare -A result
+declare -A resultDictionary
 counter=0
 firstOperation=$(( $a+$(($b*$c)) ))
-result["$((counter++))"]=$firstOperation
+resultDictionary["$((counter++))"]=$firstOperation
 echo "$firstOperation"
 
 secondOperation=$(( $(($a*$b))+$c ))
-result["$((counter++))"]=$secondOperation
+resultDictionary["$((counter++))"]=$secondOperation
 echo "$secondOperation"
 
 thirdOperation=$(( $c+$(($a/$b)) ))
-result["$((counter++))"]=$thirdOperation
+resultDictionary["$((counter++))"]=$thirdOperation
 echo "$thirdOperation"
 
 fourthOperation=$(( $(($a%$b))+$c ))
-result["$((counter++))"]=$fourthOperation
+resultDictionary["$((counter++))"]=$fourthOperation
 echo "$fourthOperation"
 
-echo ${result[@]}
+echo ${resultDictionary[@]}
+
+declare -a resultArray
+noOfOperations=4
+for (( i=0; i<$noOfOperations; i++ ))
+	do
+		resultArray[$i]=${resultDictionary["$i"]}
+	done
+echo  ${resultArray[@]}
